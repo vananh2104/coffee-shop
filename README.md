@@ -1,1 +1,1 @@
-# coffee-shop
+# A PHP coffee shop that clone the coffee house UI https://thecoffeehouse.com/

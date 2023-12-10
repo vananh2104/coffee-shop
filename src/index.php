@@ -1,8 +1,44 @@
-<html>
-    <head>
-        <title>Van Anh's coffee shop</title>
-    </head>
-    <body>
-        helllo
-    </body>
+<?php
+include_once "Model/connect.php";
+include_once "Model/menu.php";
+
+?>
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Coffee Shop</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.0/css/all.css"
+        integrity="sha384-lZN37f5QGtY3VHgisS14W3ExzMWZxybE1SJSEsQp9S+oqd12jhcu+A56Ebc1zFSJ" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Font+Name&display=swap">
+    <!-- <link rel="stylesheet" href="path/to/your/font.css"> -->
+    <link rel="stylesheet" type="text/css" href="content/styles/style.css">
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
+        crossorigin="anonymous"></script>
+    <script src="https://ajax.aspnetcdn.com/ajax/jQuery/jquery-3.4.1.min.js"></script>
+
+</head>
+
+<body>
+    <div class="app-container">
+        <!-- header -->
+        <div id="header">
+            <?php include_once "View/header.php"; ?>
+        </div>
+        <!-- content -->
+        <div class="content"></div>
+        <!-- footer -->
+        <div id="footer">
+            <?php include_once "View/footer.php"; ?>
+        </div>
+    </div>
+</body>
+
 </html>

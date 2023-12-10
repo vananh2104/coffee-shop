@@ -1,0 +1,118 @@
+html, body, ul{
+    margin-bottom:0;
+    margin-top:0;
+    margin-left:0;
+    margin-right:0;
+    padding-left: 0;
+    padding-right: 0;
+}
+li{
+    list-style: none;
+    
+}
+
+.app-container
+{
+    display: flex;
+}
+
+.app-container #content{
+    flex:1;
+}
+
+
+.sub-header {
+    display: flex;
+    margin-left: 35%;
+    width: 30%;
+
+}
+
+.sub-header .item {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+}
+
+header {
+    display: flex;
+    background-color: rgb(237, 237, 237);
+    align-items: center;
+}
+
+header .title{
+    font-size: 20px;
+    font-weight: bold;
+}
+
+header .menu {
+    flex: 1;
+    list-style: none;
+    display: flex;
+    justify-content: space-around;
+    
+    width: 100%;
+    height: 50px;
+    padding: 10px;
+    align-items: center;
+   
+}
+
+header .menu .menu {
+    display: flex;
+    position: absolute;
+    display: none;
+    align-items: flex-start;
+ 
+} 
+
+header .menu .menu>li {
+    padding: 0 20px;
+}
+
+header .menu .menu-item
+{
+    cursor: pointer;
+    position: relative;
+}
+
+header .menu .menu-item:hover>.menu {
+    display: flex;
+   
+}
+
+header .menu .menu .menu-item>a{
+    font-weight: bold;
+}
+
+header .menu .menu-sub {
+    display: flex;  
+    flex-direction: column;
+}
+.header-slide{
+    position: relative;
+
+}
+.header-slide .header{
+    position: absolute;
+    z-index: 1;
+    width: 100%;
+}
+.header-slide header{
+    position: sticky;
+    z-index: 1;
+}
+.header-slide .slide {
+    position: absolute;
+    top: 0;
+    z-index: 0;
+}
+
+/*footer*/
+#footer {
+    width: 100%;
+    background-color: #303030;
+    color: white;
+}

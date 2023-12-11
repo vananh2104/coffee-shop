@@ -29,12 +29,11 @@ li{
 
 header {
     display: flex;
-    background-color: rgb(237, 237, 237);
+    background-color: rgba(237, 237, 237, 0.8);
     align-items: center;
     position: sticky;
     z-index: 1;
     top: 0;
-    opacity: 0.8;
 }
 
 header .title{
@@ -47,12 +46,9 @@ header .menu {
     list-style: none;
     display: flex;
     justify-content: space-around;
-    
     width: 100%;
     height: 50px;
-    padding: 10px;
     align-items: center;
-   
 }
 
 header .menu .menu {
@@ -60,35 +56,51 @@ header .menu .menu {
     position: absolute;
     display: none;
     align-items: flex-start;
- 
+    width: 100%;
+    background: rgba(255, 255, 255, 0.95);
+    height: 200px;
+    top: 55px;
+    left: 0;
+    padding: 24px 15.4% 32px;
+    visibility: hidden;
+  opacity: 0;
+  transition: visibility 1s, opacity 1s linear;
 } 
 
 header .menu .menu>li {
     padding: 0 20px;
-    background-color: rgb(255, 255, 255);
 }
 
 header .menu .menu-item
 {
     cursor: pointer;
-    position: relative;
-   
+    cursor: pointer;
+    height: 100%;
+    width: 100%;
+    padding-top: 10px;
+    text-align: center;
 }
 
 header .menu .menu-item:hover>.menu {
     display: flex;
-   
+    padding-top: 20px;
+    visibility: visible;
+opacity: 1;   
+}
+header .menu .menu-item:hover>.menu li {
+    text-align: left;
 }
 
 header .menu .menu .menu-item>a{
     font-weight: bold;
+    text-decoration: underline;
+    font-size: 18px;
    
 }
 
 header .menu .menu-sub {
     display: flex;
     flex-direction: column;
-    
 }
 
 

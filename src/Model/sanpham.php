@@ -33,10 +33,10 @@ class sanPham
         return $result; 
     }
 
-    function getNew()
+    function getProductById()
     {
         $db = new connect();
-        $select = "SELECT idsp,tensp,gia, mota FROM SanPham order by ngaytao desc limit 1;";
+        $select = "SELECT idsp,tensp,gia, mota FROM SanPham WHERE idsp='17';";
         $result = $db->getInstance($select);
         return $result; // lấy đc dữ liệu
     }

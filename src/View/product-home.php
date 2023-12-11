@@ -22,27 +22,34 @@
         ?>
     </div>
     <div class="row mt-5">
-        <div class="col-md-6 new-item">
-            <?php
-            $new = $sp->getNew();
-            ?>
-            <?php
-            $images = $sp->getImages($new['idsp'], 2);
-            $newImage = $images->fetch(); ?>
-            <img src="./content/images/<?php echo $newImage['tenhinh'] ?> " />
-        </div>
-        <div class="col-md-6 new-item">
-            <?php
-            $newImage = $images->fetch(); ?>
-            <img src="./content/images/<?php echo $newImage['tenhinh'] ?> " />
-            <div class="description">
-                <?php echo $new['mota'] ?>
-            </div>
-            <div><a class="try-now">Thử ngay</a></div>
+    <div class="col-md-6 new-item">
+        <?php
+        $productId = 17;
+        $images = $sp->getImages($productId, 2);
+        // Lấy hình t1
+        $firstImage = $images->fetch();
+        ?>
+        <div>
+            <img src="./content/images/<?php echo $firstImage['tenhinh']; ?>" />
         </div>
     </div>
 
+    <div class="col-md-6 new-item">
+    <?php
+    // Lấy hình t2
+    $secondImage = $images->fetch();
 
+    // Lấy idsp= 17
+    $productInfo = $sp->getProductById($productId);
+    ?>
+    <img src="./content/images/<?php echo $secondImage['tenhinh']; ?>" />
+    <div class="description">
+        <?php echo $productInfo['mota']; ?>
+    </div>
+    <div><a class="try-now">Thử ngay</a></div>
+</div>
+
+</div>
 
     <!-- <div class="container">
 

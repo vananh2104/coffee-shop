@@ -1,3 +1,7 @@
+SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
+SET AUTOCOMMIT = 0;
+START TRANSACTION;
+SET time_zone = "+00:00";
 -- Bảng chứa khóa chính trước
 -- Bảng size
 DROP TABLE IF EXISTS `Size`;
@@ -70,7 +74,14 @@ CREATE TABLE IF NOT EXISTS `HinhAnh` (
     `idhinh` INT PRIMARY KEY,
     `tenhinh` VARCHAR(255) NOT NULL
 );
-
+--Chèn dữ liệu vào bảng hình
+INSERT INTO `HinhAnh` (`idhinh`,`tenhinh`) VALUES
+(1, '1.jpg'),(2, '2.jpg'),(3, '3.jpg'),(4, '4.jpg'),(5, '5.jpg'),
+(6,'6.jpg'),(7,'7.jpg'),(8, '8.jpg'),(9, '9.jpg'),(10,'10.jpg'),
+(11,'11.jpg'),(12,'12.jpg'),(13,'13.jpg'),(14,'14.jpg'),(15,'15.png'),
+(16,'16.jpg'),(17,'17.png'),(18,'18.jpg'),(19,'19.jpg'),(20,'20.jpg'),
+(21,'21.jpg'),(22,'22.png'),(23,'23.jpg'),(24,'24.jpg'),(25,'25.jpg'),
+(26,'26.jpg'),(27,'26.png'),(28,'27.jpg'),(29,'27.png'),
 -- Bảng sp
 DROP TABLE IF EXISTS `SanPham`;
 CREATE TABLE IF NOT EXISTS `Sanpham` (
@@ -84,7 +95,11 @@ CREATE TABLE IF NOT EXISTS `Sanpham` (
     FOREIGN KEY (`idmenu`) REFERENCES `Menu`(`idmenu`),
     CONSTRAINT `fk_hinh` FOREIGN KEY (`hinhsp`) REFERENCES `HinhAnh`(`idhinh`)
 );
-
+--chèn dữ liệu vào bảng sp
+INSERT INTO `SanPham`(`idsp`, `hinhsp`, `gia`, `tensp`, `idloai`, `idmenu`) VALUES 
+(1,1,49.000,`CloudFee hạnh nhân nướng`,null,null),
+(2,2,39.000,`The coffee house sữa đá`,null,null ),
+(3,)
 -- Bảng user
 DROP TABLE IF EXISTS `User`;
 CREATE TABLE IF NOT EXISTS `User` (

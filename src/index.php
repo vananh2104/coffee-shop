@@ -27,18 +27,63 @@ include_once "Model/menu.php";
 </head>
 
 <body>
-    <div class="app-container">
         <!-- header -->
-        <div id="header">
-            <?php include_once "View/header.php"; ?>
-        </div>
+        <?php include_once "View/header.php"; ?>
         <!-- content -->
-        <div class="content"></div>
-        <!-- footer -->
-        <div id="footer">
-            <?php include_once "View/footer.php"; ?>
+        <div class="container">
+    <div class="row">
+        <div class="col-md-6">
+            <img src="./content/images/21.jpg" width="100%" alt="">
+        </div>
+
+        <div class="col-md-6">
+            <div class="row">
+                <div class="col-md-6">
+                    <img src="./content/images/1.jpg" width="100%" alt="">
+                    <p><b> CloudFee Hạnh Nhân Nướng</b><br>49.000 đ</p>
+                </div>
+
+                <div class="col-md-6">
+                    <img src="./content/images/2.jpg" width="100%" alt="">
+                    <p><b>The Coffee House Sữa Đá</b><br>39.000 đ</p>
+                   
+                </div>
+            </div>
         </div>
     </div>
+</div>
+<!---->
+<?php include_once "View/product-home.php"; ?>
+
+<!-- <div class="container">
+    <div class="row">
+        <div class="col-md-3">
+          <img src="./content/images/4.jpg" width="100%" alt="">
+                    <p><b>Hi-Tea Vải</b><br>49.000 đ</p>
+        </div>
+        <div class="col-md-3">
+          <img src="./content/images/3.jpg" width="100%" alt="">
+                    <p><b>Cà Phê Sữa Đá</b><br>29.000 đ</p>
+        </div>
+        <div class="col-md-3">
+          <img src="./content/images/6.jpg" width="100%" alt="">
+                    <p><b>Bánh Mì VN Thịt Nguội</b><br>39.000 đ</p>
+        </div>
+        <div class="col-md-3">
+          <img src="./content/images/5.jpg" width="100%" alt="">
+                    <p><b>MoChi Kem Chocolate</b><br>19.000 đ</p>
+        </div>
+
+      
+        </div>
+    </div>
+</div> -->
+<!---->
+
+
+        <!-- footer -->
+        <?php include_once "View/footer.php"; ?>
+    <!-- </div> -->
 </body>
 
 </html>

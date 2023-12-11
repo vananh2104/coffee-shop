@@ -43,10 +43,10 @@
                 
                 <div class="hotline_footer">
                     <p>
-                        <img src="./content//images/26.png"/>Đặt hàng: 1800 6936
+                        <img src="./src/styles/image/26.png"/>Đặt hàng: 1800 6936
                     </p>
                     <p>
-                        <img src="./content//images/27.png"/>Liên hệ
+                        <img src="./src/styles/image/27.png"/>Liên hệ
                     </p>
                 </div>
                 <div class="address_footer">

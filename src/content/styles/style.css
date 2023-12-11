@@ -11,15 +11,6 @@ li{
     
 }
 
-.app-container
-{
-    display: flex;
-}
-
-.app-container #content{
-    flex:1;
-}
-
 
 .sub-header {
     display: flex;
@@ -40,6 +31,10 @@ header {
     display: flex;
     background-color: rgb(237, 237, 237);
     align-items: center;
+    position: sticky;
+    z-index: 1;
+    top: 0;
+    opacity: 0.8;
 }
 
 header .title{
@@ -70,12 +65,14 @@ header .menu .menu {
 
 header .menu .menu>li {
     padding: 0 20px;
+    background-color: rgb(255, 255, 255);
 }
 
 header .menu .menu-item
 {
     cursor: pointer;
     position: relative;
+   
 }
 
 header .menu .menu-item:hover>.menu {
@@ -85,33 +82,21 @@ header .menu .menu-item:hover>.menu {
 
 header .menu .menu .menu-item>a{
     font-weight: bold;
+   
 }
 
 header .menu .menu-sub {
-    display: flex;  
+    display: flex;
     flex-direction: column;
-}
-.header-slide{
-    position: relative;
-
-}
-.header-slide .header{
-    position: absolute;
-    z-index: 1;
-    width: 100%;
-}
-.header-slide header{
-    position: sticky;
-    z-index: 1;
-}
-.header-slide .slide {
-    position: absolute;
-    top: 0;
-    z-index: 0;
+    
 }
 
+
+.slide{
+    transform: translateY(-56px);
+}
 /*footer*/
-#footer {
+footer {
     width: 100%;
     background-color: #303030;
     color: white;

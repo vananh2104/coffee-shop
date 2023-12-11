@@ -30,7 +30,7 @@ include_once "Model/menu.php";
         <!-- header -->
         <?php include_once "View/header.php"; ?>
         <!-- content -->
-        <div class="container">
+        <!-- <div class="container">
     <div class="row">
         <div class="col-md-6">
             <img src="./content/images/21.jpg" width="100%" alt="">
@@ -51,7 +51,7 @@ include_once "Model/menu.php";
             </div>
         </div>
     </div>
-</div>
+</div> -->
 <!---->
 <?php include_once "View/product-home.php"; ?>
 

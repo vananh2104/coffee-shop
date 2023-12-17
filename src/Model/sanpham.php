@@ -40,5 +40,15 @@ class sanPham
         $result = $db->getInstance($select);
         return $result; // lấy đc dữ liệu
     }
+     function getPhanTrang($limit = 12) {
+        $db = new connect();
+        $ids = array(54, 55, 56, 57, 58, 59, 60, 61, 62, 63, 64, 65); 
+        $idsString = implode(',', $ids); 
+
+        $select = "SELECT idsp, tensp, gia FROM SanPham WHERE idsp IN ($idsString) LIMIT $limit;";
+        $result = $db->getList($select);
+        return $result;
+    }
+    
 }
 ?>

@@ -19,6 +19,7 @@ include_once "Model/menu.php";
     <!-- <link rel="stylesheet" href="path/to/your/font.css"> -->
     <link rel="stylesheet" type="text/css" href="content/styles/style.css">
 
+
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
         crossorigin="anonymous"></script>
@@ -80,7 +81,7 @@ include_once "Model/menu.php";
 </div> -->
 <!---->
 
-
+<?php include_once "View/product-menucoffee.php"; ?>
         <!-- footer -->
         <?php include_once "View/footer.php"; ?>
     <!-- </div> -->

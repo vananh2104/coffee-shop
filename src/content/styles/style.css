@@ -136,3 +136,24 @@ footer {
     border-radius: 8px;
     margin-top: 20px;
   }
+
+  .content-wrapper{
+    margin-top: 20px;
+    background-color: antiquewhite;
+    
+  }
+  .content-wrapper .row{
+    padding-right: 30px;
+  }
+ 
+
+  .col-md-4 img {
+    width:70%;
+     height:200px;
+    border: 1px solid #ccc; 
+    border-radius: 10px; 
+
+  }
+  
+   
+    

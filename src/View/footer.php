@@ -43,10 +43,10 @@
                 
                 <div class="hotline_footer">
                     <p>
-                        <img src="./content//images/26.png"/>Đặt hàng: 1800 6936
+                    <i class="fa fa-phone" aria-hidden="true"></i>Đặt hàng: 1800 6936
                     </p>
                     <p>
-                        <img src="./content//images/27.png"/>Liên hệ
+                    <i class="fa fa-map-marker" aria-hidden="true"></i>Liên hệ
                     </p>
                 </div>
                 <div class="address_footer">
@@ -69,12 +69,12 @@
                 <ul class="tch_social_links">
                     <li>
                         <a href="https://www.facebook.com/The.Coffee.House.2014/">
-                            <img src="https://file.hstatic.net/1000075078/file/test_fd4e30831d14438f9d0f1fcf255dfadb.svg"/>
+                        <i class="fa fa-facebook-official" aria-hidden="true"style="font-size: 30px;color:white;"></i>
                         </a>
                     </li>
                     <li>
                         <a href="https://www.instagram.com/thecoffeehousevn/">
-                            <img src="https://file.hstatic.net/1000075078/file/test_db37bb3840ac45f3a0a3cf7aa8a57d9e.svg"/>
+                        <i class="fa fa-instagram" aria-hidden="true" style="font-size: 30px;color:white;"></i>
                         </a>
                     </li>
                 </ul>

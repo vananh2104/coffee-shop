@@ -8,7 +8,7 @@
 </div>
 <header>
     <div class="title">
-        <h1>The Coffee House</h1>
+        <a href="/"><h1>The Coffee House</h1></a>
     </div>
     <!-- menu here -->
     <ul class="menu">
@@ -20,7 +20,7 @@
         while ($set = $result->fetch()):
             ?>
             <li class="menu-item">
-                <a data-id="<?php echo $set['id'] ?>">
+                <a href="<?php echo $set['path'] ?>" data-id="<?php echo $set['id'] ?>">
                     <?php echo $set['name']; ?>
                 </a>
                 <ul class="menu navigation-<?php echo $set['id'] ?> level-1">
@@ -59,6 +59,4 @@
         ?>
     </ul>
 </header>
-<?php
-include_once "slide.php";
-?>
+

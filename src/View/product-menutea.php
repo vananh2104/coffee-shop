@@ -6,7 +6,7 @@ $sp = new sanPham();
 $page = isset($_GET['page']) ? (int)$_GET['page'] : 1;
 $perPage = 4;
 // Lấy dữ liệu phân trang
-$result = $sp->getPhanTrangCf($perPage, $page);
+$result = $sp->getPhanTrangTea($perPage, $page);
 ?>
 
 <!DOCTYPE html>
@@ -17,7 +17,7 @@ $result = $sp->getPhanTrangCf($perPage, $page);
     <link rel="stylesheet" type="text/css" href="content/styles/style.css">
 </head>
 <body>
-    <h3>Cà Phê Tại Nhà</h3>
+    <h3>Trà Tại Nhà</h3>
     <div class="container">
         <div class="row">
             <?php while ($set = $result->fetch()): ?>
@@ -30,7 +30,7 @@ $result = $sp->getPhanTrangCf($perPage, $page);
         </div>      
         <!-- Hiển thị liên kết phân trang -->
         <?php
-        $totalPages = $sp->getTotalPagesCoffee($perPage);
+        $totalPages = $sp->getTotalPagesTea($perPage);
         for ($i = 1; $i <= $totalPages; $i++): ?>
             <a href="?page=<?php echo $i; ?>"><?php echo $i; ?></a>
         <?php endfor; ?>

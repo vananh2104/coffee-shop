@@ -119,6 +119,7 @@ footer {
 
   .new-item img {   
     width: 100%;
+  
   }
   .new-item .description {
     margin-top: 20px;
@@ -140,18 +141,31 @@ footer {
   .content-wrapper{
     margin-top: 20px;
     background-color: antiquewhite;
+    padding-left: 120px;
     
   }
   .content-wrapper .row{
-    padding-right: 30px;
+    text-align: justify;
+   
   }
- 
+ p{
+
+        text-align: justify;
+        font-size: 17px;
+ }
 
   .col-md-4 img {
-    width:70%;
-     height:200px;
+    width:80%;
+    height:210px;
     border: 1px solid #ccc; 
     border-radius: 10px; 
+
+  }
+  .col-md-3 img {
+    width:100%;
+    height:auto;
+    border-radius: 15px; 
+    box-shadow: #fff;
 
   }
   

@@ -31,30 +31,33 @@ class sanPham
         $result = $db->getList($select);
         return $result;
     }
-    function getProductById()
+    function getProductById($idsp)
     {
         $db = new connect();
-        $select = "SELECT idsp,tensp,gia, mota FROM SanPham WHERE idsp='17';";
+        $select = "SELECT idsp,tensp,gia, mota FROM SanPham WHERE idsp=$idsp;";
         $result = $db->getInstance($select);
         return $result; // lấy đc dữ liệu
     }
     //menu cà phê
-    public function getPhanTrangCf($perPage, $page)
+    public function getProductsByMenu($idmenu, $perPage, $page)
     {
         $db = new connect();
         $offset = ($page - 1) * $perPage;
-        $ids = array(54, 55, 56, 57, 58, 59, 60, 61, 62, 63, 64, 65);
-        $idsString = implode(',', $ids);
-        $select = "SELECT idsp, tensp, gia FROM SanPham WHERE idsp IN ($idsString) LIMIT $offset, $perPage;";
+       // $ids = array(54, 55, 56, 57, 58, 59, 60, 61, 62, 63, 64, 65);
+        //$idsString = implode(',', $ids);
+        $select = "SELECT idsp, tensp, gia FROM SanPham 
+        WHERE idmenu = $idmenu
+        LIMIT $offset, $perPage;";
         $result = $db->getList($select);
         return $result;
     }
-    function getTotalPagesCoffee($perPage)
+
+    function getTotalPages($idmenu, $perPage)
     {
         $db = new connect();
-        $ids = array(54, 55, 56, 57, 58, 59, 60, 61, 62, 63, 64, 65);
-        $idsString = implode(',', $ids);
-        $select = "SELECT COUNT(*) as total FROM SanPham WHERE idsp IN ($idsString);";
+        // $ids = array(54, 55, 56, 57, 58, 59, 60, 61, 62, 63, 64, 65);
+        // $idsString = implode(',', $ids);
+        $select = "SELECT COUNT(*) as total FROM SanPham WHERE idmenu = $idmenu;";
         $result = $db->getInstance($select);
         if ($result) {
             $totalItems = $result['total'];
@@ -62,29 +65,30 @@ class sanPham
         }
         return 0;
     }
+
     // menu trà
-    public function getPhanTrangTea($perPage, $page)
-    {
-        $db = new connect();
-        $offset = ($page - 1) * $perPage;
-        $ids = array(78,79,80,81,82,83,84,85);
-        $idsString = implode(',', $ids);
-        $select = "SELECT idsp, tensp, gia FROM SanPham WHERE idsp IN ($idsString) LIMIT $offset, $perPage;";
-        $result = $db->getList($select);
-        return $result;
-    }
-    function getTotalPagesTea($perPage)
-    {
-        $db = new connect();
-        $ids = array(78,79,80,81,82,83,84,85);
-        $idsString = implode(',', $ids);
-        $select = "SELECT COUNT(*) as total FROM SanPham WHERE idsp IN ($idsString);";
-        $result = $db->getInstance($select);
-        if ($result) {
-            $totalItems = $result['total'];
-            return ceil($totalItems / $perPage);
-        }
-        return 0;
-    }
+    // public function getPhanTrangTea($perPage, $page)
+    // {
+    //     $db = new connect();
+    //     $offset = ($page - 1) * $perPage;
+    //     $ids = array(78,79,80,81,82,83,84,85);
+    //     $idsString = implode(',', $ids);
+    //     $select = "SELECT idsp, tensp, gia FROM SanPham WHERE idsp IN ($idsString) LIMIT $offset, $perPage;";
+    //     $result = $db->getList($select);
+    //     return $result;
+    // }
+    // function getTotalPagesTea($perPage)
+    // {
+    //     $db = new connect();
+    //     $ids = array(78,79,80,81,82,83,84,85);
+    //     $idsString = implode(',', $ids);
+    //     $select = "SELECT COUNT(*) as total FROM SanPham WHERE idsp IN ($idsString);";
+    //     $result = $db->getInstance($select);
+    //     if ($result) {
+    //         $totalItems = $result['total'];
+    //         return ceil($totalItems / $perPage);
+    //     }
+    //     return 0;
+    // }
 }
 ?>

@@ -2,7 +2,7 @@
     <div class="container" >
         <div class="row">
         <div class="col-lg-3 col-md-3 col-sm-6 col-xs-6 col-lg-pull-6 col-md-pull-6 footer_col">
-                <h3 class="footer_title">Giới thiệu</h3>
+                <h3>Giới thiệu</h3>
                 <ul class="footer_linklists">
                     <li>
                         <a href="/pages/chuyen-ca-phe-va-tra" title="Về Chúng Tôi">Về Chúng Tôi</a>
@@ -25,7 +25,7 @@
                 </ul>
             </div>
             <div class="col-lg-3 col-md-3 col-sm-6 col-xs-6 col-lg-pull-6 col-md-pull-6 footer_col">
-                <h3 class="footer_title">Điều khoản</h3>
+                <h3 >Điều khoản</h3>
                 <ul class="footer_linklists">
                     <li>
                         <a href="/pages/dieu-khoan-su-dung" title="Điều khoản sử dụng">Điều khoản sử dụng</a>
@@ -41,7 +41,7 @@
         
             <div class="col-lg-3 col-md-3 col-sm-6 col-xs-12 col-lg-push-6 col-md-push-6 footer_col">
                 
-                <div class="hotline_footer">
+                <div>
                     <p>
                     <i class="fa fa-phone" aria-hidden="true"></i>Đặt hàng: 1800 6936
                     </p>
@@ -49,7 +49,7 @@
                     <i class="fa fa-map-marker" aria-hidden="true"></i>Liên hệ
                     </p>
                 </div>
-                <div class="address_footer">
+                <div>
                     <p>
                         Tầng 3-4 Hub Building <br>
                         195/10E Điện Biên Phủ, P.15,<br>Q.Bình Thạnh, TP.Hồ Chí Minh
@@ -66,7 +66,7 @@
                         </div>
                     </div>
                 </div>
-                <ul class="tch_social_links">
+                <ul >
                     <li>
                         <a href="https://www.facebook.com/The.Coffee.House.2014/">
                         <i class="fa fa-facebook-official" aria-hidden="true"style="font-size: 30px;color:white;"></i>

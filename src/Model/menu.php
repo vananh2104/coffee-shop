@@ -19,7 +19,12 @@ class menu
         $result = $db->getList($select);
         return $result; // lấy đc dữ liệu
     }
-
+    function getMenuByPath($path) {
+        $db = new connect();
+        $select = "SELECT id, name FROM menu where path = '$path' limit 1;";
+        $result = $db->getInstance($select);
+        return $result; // lấy đc dữ liệu
+    }
 }
 
 ?>

@@ -12,6 +12,7 @@ include_once "slide.php";
         while ($set = $result->fetch()):
             ?>
             <div class="col-md-3">
+                <a href="/products/<?php echo $set['idsp']?>">
                 <?php $image = $sp->getImage($set['idsp']) ?>
                 <img src="./content/images/<?php echo $image['tenhinh'] ?>" width="100%" alt="" />
                 <p><b>
@@ -19,6 +20,7 @@ include_once "slide.php";
                     </b><br>
                     <?php echo $set['gia'] ?> đ
                 </p>
+                </a>
             </div>
             <?php
         endwhile

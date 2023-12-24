@@ -17,7 +17,7 @@ include_once "Model/menu.php";
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Font+Name&display=swap">
     <!-- <link rel="stylesheet" href="path/to/your/font.css"> -->
-    <link rel="stylesheet" type="text/css" href="content/styles/style.css">
+    <link rel="stylesheet" type="text/css" href="/content/styles/style.css">
 
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
@@ -31,23 +31,10 @@ include_once "Model/menu.php";
     <!-- header -->
     <?php include_once "View/header.php"; ?>
 
-    <?php
-    $request = $_SERVER['REQUEST_URI'];
-    switch ($request) {
-        case '/':
-            include_once "View/product-home.php";
-            break;
-        case '/tra-tai-nha':
-            include_once "View/product-menutea.php";
-            break;
-        case '/ca-phe-tai-nha':
-            include_once "View/product-menucoffee.php";
-            break;
-    }
-    ?>
+<?php include_once "Controller/product-menubyid.php";?>
 
     <!---->
-    
+
 
     <!-- footer -->
     <?php include_once "View/footer.php"; ?>

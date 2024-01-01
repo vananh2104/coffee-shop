@@ -1,5 +1,5 @@
 <?php
-include_once "Model/sanpham.php";
+include_once "Model/products.php";
 include_once "Model/menu.php";
 $menu = new menu();
 $path = $_SERVER['PATH_INFO'];
@@ -32,7 +32,7 @@ if (!$result) {
                 <p><b>
                         <?php echo $set['tensp'] ?>
                     </b><br>
-                    <?php echo $set['gia'] ?> đ
+                    <?php echo number_format($set['gia'], 0, ',', '.') ?>  đ
                 </p>
                 </a>
             </div>

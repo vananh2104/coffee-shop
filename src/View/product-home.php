@@ -1,4 +1,4 @@
-<?php include_once "Model/sanpham.php";
+<?php include_once "Model/products.php";
 ?>
 <?php
 include_once "slide.php";
@@ -18,7 +18,7 @@ include_once "slide.php";
                 <p><b>
                         <?php echo $set['tensp'] ?>
                     </b><br>
-                    <?php echo $set['gia'] ?> đ
+                    <?php echo number_format($set['gia'], 0, ',', '.') ?>  đ
                 </p>
                 </a>
             </div>
@@ -68,25 +68,24 @@ include_once "slide.php";
         <div class="col-md-4">
             <img src="./content/images/13.jpg" alt="">
             <p>30/10/2023</p>
-            <h5>CHỈ CHỌN CÀ PHÊ MỖI SÁNG NHƯNG CŨNG...</h5>
-            <p>Thực chất, bạn không nhất thiết phải làm gì to tát để tạo <br>nên một ngày rực rỡ. Chỉ cần bắt đầu từ
-                những
-                việc nhỏ <br>nhặt nhất, khi bạn...</p>
+            <!-- <h5>CHỈ CHỌN CÀ PHÊ MỖI SÁNG NHƯNG CŨNG...</h5> -->
+            <h6>CHỈ CHỌN CÀ PHÊ MỖI SÁNG NHƯNG CŨNG...</h6>
+            <p>Thực chất, bạn không nhất thiết phải làm gì to tát<br> để tạo nên một ngày rực rỡ. Chỉ cần bắt đầu từ<br>
+                những việc nhỏ nhặt nhất, khi bạn...</p>
         </div>
         <div class="col-md-4">
             <img src="./content/images/11.jpg" alt="">
             <p>12/02/2023
 
             </p>
-            <h5>SIGNATURE - BIỂU TƯỢNG VĂN HOÁ CÀ PH...</h5>
-            <p>Mới đây, các "tín đồ" cà phê đang bàn tán xôn xao về<br> SIGNATURE - Biểu tượng văn hóa cà phê của The
-                Coffee<br>
-                House đã quay trở lại.Một lời...</p>
+            <h6>SIGNATURE - BIỂU TƯỢNG VĂN HOÁ CÀ PH...</h6>
+            <p>Mới đây, các "tín đồ" cà phê đang bàn tán xôn<br> xao về SIGNATURE - Biểu tượng văn hóa cà phê <br>của The
+                Coffee House đã quay trở lại.Một lời...</p>
         </div>
         <div class="col-md-4">
             <img src="./content/images/12.jpg" alt="">
             <p>9/12/2023</p>
-            <h5>UỐNG GÌ KHI TỚI SIGNATURE BY THE...</h5>
+            <h6>UỐNG GÌ KHI TỚI SIGNATURE BY THE...</h6>
             <p>Vừa qua, The Coffee House chính thức khai trương<br> cửa hàng SIGNATURE by The Coffee House, chuyên
                 <br>phục vụ
                 cà phê đặc sản, các món ăn đa bản sắc ấy...</p>
@@ -100,30 +99,28 @@ include_once "slide.php";
                     <p>19/09/2023
 
                     </p>
-                    <h5>TRUNG THU NÀY, SAO BẠN KHÔNG TỰ CH...</h5>
-                    <p>Bạn có từng nghe: “Trung thu thôi mà, có gì đâu mà chơi” <br>hay “Trung thu càng ngày càng
-                        chán”...?
-                        Sự bận rộn đến<br> mức “điên rồ” đã khiến chúng...</p>
+                    <h6>TRUNG THU NÀY, SAO BẠN KHÔNG TỰ CH...</h6>
+                    <p>Bạn có từng nghe: “Trung thu thôi mà, có gì đâu <br>mà chơi” hay “Trung thu càng ngày càng
+                        chán”...?<br>
+                        Sự bận rộn đến mức “điên rồ” đã khiến chúng...</p>
                 </div>
                 <div class="col-md-4">
                     <img src="./content/images/14.jpg" alt="">
                     <p>16/01/2023
                     </p>
-                    <h5>BỘ SƯU TẬP CẦU TOÀN KÈO THƠM: "VÍA"...</h5>
-                    <p>Tết nay vẫn giống Tết xưa, không hề mai một nét văn<br> hoá truyền thống mà còn thêm vào những
-                        hoạt
-                        động<br> “xin vía” hiện đại, trẻ trung. Ví như...</p>
+                    <h6>BỘ SƯU TẬP CẦU TOÀN KÈO THƠM: "VÍA"...</h6>
+                    <p>Tết nay vẫn giống Tết xưa, không hề mai một nét<br> văn hoá truyền thống mà còn thêm vào những
+                        hoạt<br>động “xin vía” hiện đại, trẻ trung. Ví như...</p>
 
                 </div>
                 <div class="col-md-4">
                     <img src="./content/images/16.jpg" alt="">
 
                     <p>16/08/2022</p>
-                    <h5>“KHUẤY ĐỂ THẤY TRĂNG" - KHUẤY LÊN...</h5>
+                    <h6>“KHUẤY ĐỂ THẤY TRĂNG" - KHUẤY LÊN...</h6>
                     <p>
-                        Năm 2022 là năm đề cao sức khỏe tinh thần nên giới <br>trẻ muốn tận hưởng một Trung thu với
-                        nhiều
-                        trải <br>nghiệm mới mẻ, rôm rả cùng bạn bè...</p>
+                        Năm 2022 là năm đề cao sức khỏe tinh thần nên<br> giới trẻ muốn tận hưởng một Trung thu với
+                        nhiều <br>trải nghiệm mới mẻ, rôm rả cùng bạn bè...</p>
                 </div>
             </div>
             <div>
@@ -133,27 +130,26 @@ include_once "slide.php";
                     <div class="col-md-4">
                         <img src="./content/images/23.jpg" alt="">
                         <p>16/08/2023</p>
-                        <h5>NGƯỢC LÊN TÂY BẮC GÓI VỊ MỘC VỀ XUÔI</h5>
-                        <p>Những dải ruộng bậc thang, các cô gái Thái với điệu<br> múa xòe hoa, muôn cung đường ngợp mùa
-                            hoa… đó<br> là rẻo cao Tây Bắc luôn làm say lòng...</p>
+                        <h6>NGƯỢC LÊN TÂY BẮC GÓI VỊ MỘC VỀ XUÔI</h6>
+                        <p>Những dải ruộng bậc thang, các cô gái Thái với<br> điệu múa xòe hoa, muôn cung đường ngợp mùa<br>
+                            hoa… đó là rẻo cao Tây Bắc luôn làm say lòng...</p>
                     </div>
                     <div class="col-md-4">
                         <img src="./content/images/30.jpg" alt="">
                         <p>10/07/2023
 
                         </p>
-                        <h5>ĐI "VAY LẠNH" - TỪ VỰNG HẸN HÒ MỚI NỔ...</h5>
-                        <p>Đi “vay lạnh” - từ vựng hẹn hò mới nổi, cập nhật ngay kẻo <br>lỗi thời Nếu “đi trà sữa”, “đi
-                            đu
-                            đưa”... đã trở thành những<br> lời rủ rê...</p>
+                        <h6>ĐI "VAY LẠNH" - TỪ VỰNG HẸN HÒ MỚI NỔ...</h5>
+                        <p>Đi “vay lạnh” - từ vựng hẹn hò mới nổi, cập nhật <br>ngay kẻo lỗi thời Nếu “đi trà sữa”, “đi
+                            đu đưa”...<br> đã trở thành những lời rủ rê...</p>
                     </div>
                     <div class="col-md-4">
                         <img src="./content/images/31.jpg" alt="">
                         <p>01/07/2023</p>
-                        <h5>NGHE NHÀ MÁCH NHỎ BÍ KÍP HEALTHY GỌ...</h5>
-                        <p>Sống lành mạnh (healthy) đang là xu hướng được nhiều <br>người trẻ ưa chuộng. Tuy nhiên,
+                        <h6>NGHE NHÀ MÁCH NHỎ BÍ KÍP HEALTHY GỌ...</h6>
+                        <p>Sống lành mạnh (healthy) đang là xu hướng được <br> nhiềungười trẻ ưa chuộng. Tuy nhiên,
                             không
-                            đơn thuần là việ<br>c chăm chút đi theo các chế độ ăn uống...</p>
+                            đơn<br> thuần là việc chăm chút đi theo các chế độ ăn uống...</p>
                     </div>
                 </div>
             </div>

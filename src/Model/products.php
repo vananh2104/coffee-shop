@@ -38,12 +38,12 @@ class sanPham
         $result = $db->getInstance($select);
         return $result; // lấy đc dữ liệu
     }
-    //menu cà phê
-    public function getProductsByMenu($idmenu, $perPage, $page)
+    //phân trang
+    function getProductsByMenu($idmenu, $perPage, $page)
     {
         $db = new connect();
         $offset = ($page - 1) * $perPage;
-       // $ids = array(54, 55, 56, 57, 58, 59, 60, 61, 62, 63, 64, 65);
+        // $ids = array(54, 55, 56, 57, 58, 59, 60, 61, 62, 63, 64, 65);
         //$idsString = implode(',', $ids);
         $select = "SELECT idsp, tensp, gia FROM SanPham 
         WHERE idmenu = $idmenu
@@ -66,29 +66,20 @@ class sanPham
         return 0;
     }
 
-    // menu trà
-    // public function getPhanTrangTea($perPage, $page)
-    // {
-    //     $db = new connect();
-    //     $offset = ($page - 1) * $perPage;
-    //     $ids = array(78,79,80,81,82,83,84,85);
-    //     $idsString = implode(',', $ids);
-    //     $select = "SELECT idsp, tensp, gia FROM SanPham WHERE idsp IN ($idsString) LIMIT $offset, $perPage;";
-    //     $result = $db->getList($select);
-    //     return $result;
-    // }
-    // function getTotalPagesTea($perPage)
-    // {
-    //     $db = new connect();
-    //     $ids = array(78,79,80,81,82,83,84,85);
-    //     $idsString = implode(',', $ids);
-    //     $select = "SELECT COUNT(*) as total FROM SanPham WHERE idsp IN ($idsString);";
-    //     $result = $db->getInstance($select);
-    //     if ($result) {
-    //         $totalItems = $result['total'];
-    //         return ceil($totalItems / $perPage);
-    //     }
-    //     return 0;
-    // }
+
+    function getSizesByProduct()
+    {
+        $db = new Connect();
+        $select = "SELECT idsize, tensize, giasize FROM Size;";
+        $result = $db->getList($select);
+        return $result;
+    }
+    function getToppingsByProduct()
+    {
+        $db = new Connect();
+        $select = "SELECT idtopping, tentopping, giatopping FROM Topping;";
+        $result = $db->getList($select);
+        return $result;
+    }
 }
 ?>

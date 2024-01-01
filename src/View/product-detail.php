@@ -1,5 +1,5 @@
 <?php
-include_once "Model/sanpham.php";
+include_once "Model/products.php";
 
 $path = $_SERVER['PATH_INFO'];
 $idsp = explode("/", $path)[2];
@@ -7,6 +7,7 @@ $sp = new sanPham();
 $productDetail = $sp->getProductById($idsp);
 
 ?>
+
 <div class="container">
     <div class="row">
         <div class="col-md-6">
@@ -17,20 +18,59 @@ $productDetail = $sp->getProductById($idsp);
         </div>
         <div class="col-md-6">
             <div>
-                <?php echo $productDetail['tensp'] ?>
+                <h3><b>
+                        <?php echo $productDetail['tensp'] ?>
+                    </b></h3>
             </div>
             <div>
-                <?php echo $productDetail['gia'] ?>
+                <h3><b style="color: orange;">
+                        <?php echo number_format($productDetail['gia'], 0, ',', '.') ?> đ
+                    </b></h3>
             </div>
             <div>
-                <?php echo $productDetail['size'] ?>
+                <p>Chọn size(bắt buộc):</p>
+                <?php
+
+                $sp = new sanPham();
+                $size = $sp->getSizesByProduct();
+                while ($set = $size->fetch()):
+                    ?>
+                    <div class="custom-input">
+                        <input type="button" class="custom-button" data-size-id="<?php echo $set['idsize']; ?>"
+                            value="<?php echo $set['tensize'] . '+ ' . $set['giasize']; ?> đ">
+                    </div>
+                <?php endwhile;
+                ?>
             </div>
-            
+            <div>
+                <p>Topping:</p>
+                <?php
+
+                $sp = new sanPham();
+                $size = $sp->getToppingsByProduct();
+                while ($set = $size->fetch()):
+                    ?>
+                    <div class="custom-input1">
+                        <input type="button" class="custom-button1" data-size-id="<?php echo $set['idtopping']; ?>"
+                            value="<?php echo $set['tentopping'] . '+ ' . $set['giatopping']; ?> đ">
+                    </div>
+                <?php endwhile;
+                ?>
+            </div>
+            <div>
+                <button><i class="fa fa-motorcycle" aria-hidden="true"> Đặt giao tận nơi</i></button>
+            </div>
+            <div>
+
+            </div>
+
         </div>
         <div class="col-md-12">
             <p><b>Mô tả sản phẩm:</b><br>
                 <?php echo $productDetail['mota'] ?>
             </p>
         </div>
+
+
     </div>
 </div>

@@ -5,6 +5,30 @@
     <div class="item">
         <a href="#"> <i class="fa fa-phone" aria-hidden="true"></i>Đặt hàng:1800.6936</a>
     </div>
+    <?php 
+           if(isset($_SESSION['LastName'])){
+            echo '<div class="item">
+            <a>Hi '.$_SESSION['FirstName'].' '.$_SESSION['LastName'].'</a>
+             </div>';
+             echo '
+         <div class="item">
+             <a href="/logout"> <i class="fa fa-sign-out" aria-hidden="true"></i>Đăng xuất</a>
+         </div>'; 
+
+        }
+        else
+        {
+           echo '<div class="item">
+        
+           <a href="/register"><i class="fa fa-sign-in" aria-hidden="true"></i>Đăng ký</a>
+          
+       </div>
+       <div class="item">
+           <a href="/login"> <i class="fa fa-sign-in" aria-hidden="true"></i>Đăng nhập</a>
+       </div>'; 
+        }
+        ?>
+    
 </div>
 <header>
     <div class="title">
@@ -30,7 +54,7 @@
                 <a href="<?php echo $set['path'] ?>" data-id="<?php echo $set['id'] ?>">
                     <?php echo $set['name'];
                     if ($itemCount) {
-                        echo "▼";
+                        echo '<span style="font-size: 8px;">▼</span>';
                     }
                     ?>
                 </a>

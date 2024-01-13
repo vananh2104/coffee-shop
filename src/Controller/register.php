@@ -49,7 +49,7 @@ switch ($act) {
                 $inskh = $kh->insertKH($lname, $fname, $gender, $address, $phone, $username, $email, $passnew, gmdate("Y-m-d H:i:s"));
                 if ($inskh !== false) {
                     echo '<script> alert("Đăng ký thành công");</script>';
-                    echo '<meta http-equiv="refresh" content="0;url=./index.php?action=home"/>';
+                    echo '<meta http-equiv="refresh" content="0;url=/"/>';
                 } else {
                     echo '<script> alert("Đăng ký không thành công");</script>';
                     echo '<meta http-equiv="refresh" content="0;url=./register"/>';

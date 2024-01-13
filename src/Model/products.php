@@ -81,5 +81,30 @@ class sanPham
         $result = $db->getList($select);
         return $result;
     }
+    function getToppingsByIds($toppingIds)
+    {
+        $db = new Connect();
+        $select = "SELECT idtopping, tentopping, giatopping FROM Topping WHERE idtopping IN ($toppingIds);";
+        $result = $db->getList($select)->fetchAll();
+        return $result;
+    }
+    //
+    // function getCart($idsp, $size, $topping)
+    // {
+    //     $db = new connect();
+    //     $select = "SELECT sp.tensp, s.tensize, s.giasize, t.tentopping, t.giatopping, sp.gia
+    //                FROM Sanpham sp
+    //                JOIN Size s ON sp.idsize = s.idsize
+    //                JOIN Topping t ON sp.idtopping = t.idtopping
+    //                WHERE sp.idsp = $idsp AND s.idsize = $size AND t.idtopping = $topping";
+    
+    //     echo $select; 
+    //     $result = $db->getInstance($select);
+    //     return $result;
+    // }
+    
+
+
+   
 }
 ?>

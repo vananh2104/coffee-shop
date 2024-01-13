@@ -1,53 +1,56 @@
 <div class="sub-header">
     <div class="item">
-        <a href="#"> <i class="fa fa-map-marker" aria-hidden="true"></i>147 Cửa hàng khắp cả nước</a>
+        <i style="color:orange" class="fa fa-map-marker" aria-hidden="true"> <a href="#"> </i>147 Cửa hàng cả nước</a>
     </div>
     <div class="item">
-        <a href="#"> <i class="fa fa-phone" aria-hidden="true"></i>Đặt hàng:1800.6936</a>
+        <i style="color:orange" class="fa fa-phone" aria-hidden="true"></i><a href="#">Đặt hàng:1800.6936</a>
     </div>
-    <?php 
-           if(isset($_SESSION['LastName'])){
-            echo '<div class="item">
-            <a>Hi '.$_SESSION['FirstName'].' '.$_SESSION['LastName'].'</a>
-             </div>';
-             echo '
-         <div class="item">
-             <a href="/logout"> <i class="fa fa-sign-out" aria-hidden="true"></i>Đăng xuất</a>
-         </div>'; 
+    <!--đk,đnhap,đx-->
+    <?php
+    if (isset($_SESSION['LastName'])) {
+        echo '<div class="item user-action">
+    <i style="color:orange"  class="fa fa-user-circle-o" aria-hidden="true"></i><a style="color: red;">
+        Hi,' . $_SESSION['FirstName'] . ' ' . $_SESSION['LastName'] . '</a>
+    </div>';
+        echo '<div class="item user-action">
+    <i style="color:orange"  class="fa fa-sign-out" aria-hidden="true"></i><a href="/logout"> Đăng xuất</a>
+    </div>';
+    } else {
+        echo '<div class="item user-action">
+    <i style="color:orange"  class="fa fa-sign-in" aria-hidden="true"> <a href="/register"></i>Đăng ký</a>
+    </div>
+    <div class="item user-action">
+    <i style="color:orange"  class="fa fa-sign-in" aria-hidden="true"><a href="/login"> </i>Đăng nhập</a>
+    </div>';
+    }
+    ?>
+    <!--giỏ hàng-->
+    <div class="item">
+        <a href="/cart"><i style="color:orange" style="font-size: 20px;" class="fa fa-cart-plus" aria-hidden="true">(0)</i>
+        </a>               
+    </div>
 
-        }
-        else
-        {
-           echo '<div class="item">
-        
-           <a href="/register"><i class="fa fa-sign-in" aria-hidden="true"></i>Đăng ký</a>
-          
-       </div>
-       <div class="item">
-           <a href="/login"> <i class="fa fa-sign-in" aria-hidden="true"></i>Đăng nhập</a>
-       </div>'; 
-        }
-        ?>
-    
 </div>
+
 <header>
     <div class="title">
         <a href="/">
             <h1>The Coffee House</h1>
         </a>
     </div>
+
     <!-- menu here -->
     <ul class="menu">
 
         <?php
         $mn = new menu();
-        $result = $mn->getMenu(null); //1 bảng chứa 8 sp
-        //lấy từng sản phẩm dùng vòng lặp
+        $result = $mn->getMenu(null); 
+        
         while ($set = $result->fetch()):
             ?>
             <li class="menu-item">
                 <?php $mn2 = new menu();
-                $result2 = $mn2->getMenu($set['id']); //1 bảng chứa 8 sp 
+                $result2 = $mn2->getMenu($set['id']); 
                 $itemCount = $result2->fetchColumn();
                 ?>
 
@@ -74,8 +77,8 @@
                             <ul class="menu-sub navigation-<?php echo $set2['id'] ?> level-2">
                                 <?php
                                 $mn3 = new menu();
-                                $result3 = $mn3->getMenu($set2['id']); //1 bảng chứa 8 sp 
-                                //lấy từng sản phẩm dùng vòng lặp
+                                $result3 = $mn3->getMenu($set2['id']); 
+                               
                                 while ($set3 = $result3->fetch()):
                                     ?>
                                     <li><a href="<?php echo $set3['path'] ?>">

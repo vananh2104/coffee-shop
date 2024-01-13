@@ -33,6 +33,10 @@ switch ($paths[1]) {
         include_once "View/login.php";
         }
         break;
+    case 'logout':
+        include_once "Controller/logout.php";
+        case 'cart':
+            include_once "Controller/cart.php";
     default:
         include_once "View/not-found.php";
 }

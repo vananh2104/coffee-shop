@@ -34,7 +34,7 @@ include_once "Model/menu.php";
 
     <!-- header -->
     <?php include_once "View/header.php"; ?>
-    <?php include_once "Controller/product-menubyid.php";?>
+    <?php include_once "Controller/route.php";?>
     <!---->
     <!-- footer -->
     <?php include_once "View/footer.php"; ?>

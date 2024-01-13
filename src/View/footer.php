@@ -5,22 +5,22 @@
                 <h3>Giới thiệu</h3>
                 <ul class="footer_linklists">
                     <li>
-                        <a href="/pages/chuyen-ca-phe-va-tra" title="Về Chúng Tôi">Về Chúng Tôi</a>
+                        <a style="color:#fff" href="/pages/chuyen-ca-phe-va-tra" title="Về Chúng Tôi">Về Chúng Tôi</a>
                     </li>
                     <li>
-                        <a href="/" title="Sản phẩm">Sản phẩm</a>
+                        <a style="color:#fff" href="/" title="Sản phẩm">Sản phẩm</a>
                     </li>
                     <li>
-                        <a href="/" title="Khuyến mãi">Khuyến mãi</a>
+                        <a style="color:#fff" href="/" title="Khuyến mãi">Khuyến mãi</a>
                     </li>
                     <li>
-                        <a href="/pages/hat-ca-phe-the-coffee-house" title="Chuyện cà phê">Chuyện cà phê</a>
+                        <a style="color:#fff" href="/pages/hat-ca-phe-the-coffee-house" title="Chuyện cà phê">Chuyện cà phê</a>
                     </li>
                     <li>
-                        <a href="/pages/our-stores" title="Cửa Hàng">Cửa Hàng</a>
+                        <a style="color:#fff" href="/pages/our-stores" title="Cửa Hàng">Cửa Hàng</a>
                     </li>
                     <li>
-                        <a href="http://tuyendung.thecoffeehouse.com/" title="Tuyển dụng">Tuyển dụng</a>
+                        <a style="color:#fff" href="http://tuyendung.thecoffeehouse.com/" title="Tuyển dụng">Tuyển dụng</a>
                     </li>
                 </ul>
             </div>
@@ -28,13 +28,13 @@
                 <h3 >Điều khoản</h3>
                 <ul class="footer_linklists">
                     <li>
-                        <a href="/pages/dieu-khoan-su-dung" title="Điều khoản sử dụng">Điều khoản sử dụng</a>
+                        <a  style="color:#fff" href="/pages/dieu-khoan-su-dung" title="Điều khoản sử dụng">Điều khoản sử dụng</a>
                     </li>
                     <li>
-                        <a href="/pages/chinh-sach-bao-mat-thong-tin" title="Chính sách bảo mật thông tin">Chính sách bảo mật thông tin</a>
+                        <a style="color:#fff" href="/pages/chinh-sach-bao-mat-thong-tin" title="Chính sách bảo mật thông tin">Chính sách bảo mật thông tin</a>
                     </li>
                     <li>
-                        <a href="/pages/huong-dan-xuat-hoa-don-gtgt" title="Hướng dẫn xuất hóa đơn GTGT">Hướng dẫn xuất hóa đơn GTGT</a>
+                        <a style="color:#fff" href="/pages/huong-dan-xuat-hoa-don-gtgt" title="Hướng dẫn xuất hóa đơn GTGT">Hướng dẫn xuất hóa đơn GTGT</a>
                     </li>
                 </ul>
             </div>
@@ -61,7 +61,7 @@
                     <div class="fb-page" data-href="https://www.facebook.com/The.Coffee.House.2014/" data-small-header="false" data-adapt-container-width="true" data-hide-cover="false" data-show-facepile="true">
                         <div class="fb-xfbml-parse-ignore">
                             <blockquote cite="https://www.facebook.com/The.Coffee.House.2014/" class="fb-xfbml-parse-ignore">
-                                <a href="https://www.facebook.com/The.Coffee.House.2014/">The Coffee House</a>
+                                <a style="color:#fff" href="https://www.facebook.com/The.Coffee.House.2014/">The Coffee House</a>
                             </blockquote>
                         </div>
                     </div>

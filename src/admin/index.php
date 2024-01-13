@@ -1,4 +1,4 @@
-<html>
+<!-- <html>
     <head>
         <title>Van Anh's coffee shop</title>
         // bootstrap CSS
@@ -13,4 +13,4 @@
 </html>
 
 // Login
-// 
+//  -->

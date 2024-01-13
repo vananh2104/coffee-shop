@@ -103,11 +103,11 @@
   <form class="form" action="/login?action=login&act=dangnhap_action" method="post">
     <div class="input-group">
       <label for="username">Username</label>
-      <input type="text" name="txtusername" id="username" placeholder="" value="anhtran">
+      <input type="text" name="txtusername" id="username" placeholder="" >
     </div>
     <div class="input-group">
       <label for="password">Password</label>
-      <input type="password" name="txtpass" id="password" placeholder="" value="123">
+      <input type="password" name="txtpass" id="password" placeholder="" >
       <div class="forgot">
         <a rel="noopener noreferrer" href="#">Forgot Password ?</a>
       </div>

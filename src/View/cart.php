@@ -36,9 +36,14 @@
               </td>
               <td>Size:
                 <!-- TODO hien thi ten size va topping -->
-                <?php echo $item['size']; ?> 
+                <?php echo '<span class="size-item">' . $item['size']['tensize'] . ' + ' . $item['size']['giasize'] . '</span>' ?> 
                 <br> Topping:
-            
+                <ul>
+                <?php
+                foreach ($item['toppings'] as $toppingKey => $toppingItem):
+                  echo '<li class="cart-topping-item">' . $toppingItem["tentopping"] . ' + ' . $toppingItem["giatopping"] . '</li>';
+                endforeach; ?>
+                </ul>
               </td>
               <td>Đơn Giá:
                 <?php echo $item['dongia']; ?> - Số Lượng: <input type="text" name="newqty[<?php echo $key; ?>]"

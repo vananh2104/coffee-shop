@@ -20,28 +20,32 @@ include_once 'Model/products.php';
             case 'cart_action':
                 #truyền id, mau, size, soluong
                 $idsp=0;
-                $size='';
-                $giasize='';
+                $idsize=0;
                 $topping='';
                 $soluong=0;
                 if(isset($_POST['idsp'])){
                     $idsp=$_POST['idsp'];
-                    $size=$_POST['size'];
+                    $idsize=$_POST['size'];
                     $soluong=$_POST['soluong'];
-                    $giasize=$_POST['giasize'];
                    $toppingIds=$_POST['toppings']; //toppings = [{id:1,gia:10000}, {id:2,gia:2000}]
                    $sp = new sanPham();
-                   $toppings =  $sp->getToppingsByIds($toppingIds);
+                   $toppingsdb =  $sp->getToppingsByIds($toppingIds);
+                   $size = $sp->getSizeById($idsize);
+                   $toppings =[];
+                   while ($topping = $toppingsdb->fetch()):
+                    array_push($toppings, $topping);
+                   endwhile;
                   // $toppings = array(new topping(1, 10000), new topping(2, 10000));
                    // $giatopping=$_POST['giatopping'];
                     //Controller yêu cầu add thông tin này vào trong giỏ hàng
                     $gh = new cart();
-                    $gh->addCart($idsp, $size, $giasize,$toppings,$soluong);
+                    $gh->addCart($idsp, $size,$toppings,$soluong);
             
                     // Add an echo statement to indicate successful addition
                     echo '<script>
                     alert("Sản phẩm đã được thêm vào giỏ hàng thành công ^-^ !");
                   </script>';
+                  echo '<meta http-equiv="refresh" content="0; url=/cart"/>';
                 }
                 break;
             

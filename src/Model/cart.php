@@ -3,7 +3,7 @@ include_once "Model/products.php";
 class cart
 {
     //Thêm thông tin sản phẩm vòa giỏ hàng
-    function addCart($idsp, $size, $giasize, $toppings, $soluong)
+    function addCart($idsp, $size, $toppings, $soluong)
     {
         //còn thiếu hình, tên, đơn giá, thành tiền
         $sp = new sanPham();
@@ -17,8 +17,9 @@ class cart
         //Lấy hình
         //$hinh=$sp->getCart($idsp, $size,$topping);
         // $img = $hinh['hinh'];
+        
         $sum_topping = array_sum(array_column($toppings, 'giatopping'));
-        $total = ($dongia + $giasize + $sum_topping) * $soluong;
+        $total = ($dongia + $size['giasize'] + $sum_topping) * $soluong;
         $flag = false;
         //Trước khi đưa 1 object vào giỏ hàng thì kiểm tra hàng đó có tồn tại trong giỏ hàng chưa
         foreach ($_SESSION['cart'] as $key => $item) {
@@ -35,7 +36,6 @@ class cart
                 'idsp' => $idsp, //thuộc tính->giá trị, trong đó thuộc tính tự đặt
                 'tensp' => $tensp, //
                 'size' => $size,
-                'giasize' => $giasize,
                 'toppings' => $toppings,
                 'soluong' => $soluong,
                 'dongia' => $dongia,

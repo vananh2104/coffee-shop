@@ -51,9 +51,9 @@ include_once 'Model/products.php';
             
         case 'cart_delete':
             //Nhận key
-            if(isset($_GET['idsp'])) {
-                $idsp = $_GET['idsp'];
-                unset($_SESSION['cart'][$idsp]);
+            if(isset($_GET['id'])) {
+                $id = $_GET['id'];
+                unset($_SESSION['cart'][$id]);
             }
             echo '<meta http-equiv="refresh" content="0; url=/cart"/>';
             break;

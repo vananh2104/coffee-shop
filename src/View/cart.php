@@ -22,10 +22,11 @@
         </thead>
         <tbody>
           <?php
+          $index = 0;
           foreach ($_SESSION['cart'] as $key => $item):
             ?>
             <tr>
-              <td></td>
+              <td><?php echo $key + 1?></td>
               <td>
               <?php
                 $image = $sp->getImage($item['idsp']);
@@ -52,7 +53,7 @@
                   <?php echo $item['thanhtien']; ?><sup><u>đ</u></sup>
                 </p>
               </td>
-              <td><a href="index.php?action=cart&act=cart_delete&id=<?php echo $key; ?>"><button type="button"
+              <td><a href="/cart?action=cart&act=cart_delete&id=<?php echo $key; ?>"><button type="button"
                     class="btn btn-danger">Xóa</button></a>
 
                 <button type="submit" class="btn btn-secondary">Sửa</button>

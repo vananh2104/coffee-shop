@@ -109,7 +109,7 @@
       <label for="password">Password</label>
       <input type="password" name="txtpass" id="password" placeholder="" >
       <div class="forgot">
-        <a rel="noopener noreferrer" href="#">Forgot Password ?</a>
+        <a rel="noopener noreferrer" href="/login?action=forget">Forgot Password ?</a>
       </div>
     </div>
     <button class="sign" name="submit">Sign in</button>

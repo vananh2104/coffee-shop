@@ -20,11 +20,23 @@ class user {
     }
     function loginUser($username,$pass){
         $db=new connect();
-        $select="SELECT  a.LastName,a.FirstName,a.Username,a.Password from Users a WHERE a.Username='$username' and a.Password ='$pass'";
+        $select="SELECT * from Users  WHERE Username='$username' and Password ='$pass'";
         $result=$db->getInstance($select);
         return $result;
     }
-   
+           //pt ktra email có tồn tại k
+           function checkEmail($email) {
+            $db = new connect();
+            $select = "select * from Users a WHERE a.Email='$email'";
+            $result = $db -> getList($select);//trả về table
+            return $result;
+        }
+        //pt update
+        function updatePassEmail($email, $passnew) {
+            $db = new connect();
+            $query = "UPDATE `users` SET `Password`='$passnew' where `Email`='$email'";
+            $db->exec($query);
+        }
     
 }
 ?>

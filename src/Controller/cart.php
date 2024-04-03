@@ -23,11 +23,12 @@ include_once 'Model/products.php';
                 $idsize=0;
                 $topping='';
                 $soluong=0;
-                if(isset($_POST['idsp'])){
+               if(isset($_POST['idsp'])){
+                 
                     $idsp=$_POST['idsp'];
                     $idsize=$_POST['size'];
                     $soluong=$_POST['soluong'];
-                   $toppingIds=$_POST['toppings']; //toppings = [{id:1,gia:10000}, {id:2,gia:2000}]
+                    $toppingIds=$_POST['toppings']; //toppings = [{id:1,gia:10000}, {id:2,gia:2000}]
                    $sp = new sanPham();
                    $toppingsdb =  $sp->getToppingsByIds($toppingIds);
                    $size = $sp->getSizeById($idsize);
@@ -47,6 +48,7 @@ include_once 'Model/products.php';
                   </script>';
                   echo '<meta http-equiv="refresh" content="0; url=/cart"/>';
                 }
+            
                 break;
             
         case 'cart_delete':

@@ -1,9 +1,11 @@
 <?php
 session_start();
-
+// session_unset();
+include_once "Model/class.phpmailer.php";
+include_once "Model/class.smtp.php";
 include_once "Model/connect.php";
 include_once "Model/menu.php";
-
+include_once "Model/user.php"
 ?>
 <!DOCTYPE html>
 <html lang="en">

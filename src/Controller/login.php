@@ -22,10 +22,12 @@ switch ($act) {
             // $count = $logUser->rowCount();                                  
             // $uslg = $logUser->fetch();   
             if ($logUser) {
-                // $_SESSION['Id'] = $logUser['Id'];
+                $_SESSION['Id'] = $logUser['Id'];
                 $_SESSION['LastName'] = $logUser['LastName'];
                 $_SESSION['FirstName'] = $logUser['FirstName'];
-
+                $_SESSION['Address'] = $logUser['Address'];
+                $_SESSION['PhoneNumber'] = $logUser['PhoneNumber'];
+                
                 echo '<script> alert("Đăng nhập thành công");</script>';
                echo '<meta http-equiv="refresh" content="0;url=/" />';
             } else {

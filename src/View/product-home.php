@@ -25,6 +25,24 @@ include_once "slide.php";
             <?php
         endwhile
         ?>
+        <?php 
+  $ac=1;
+  if(isset($_GET['action']))
+  {
+    if(isset($_GET['act']) && $_GET['act']=='sanphamkhuyenmai')
+    {
+        $ac=2;
+    }
+    else if (isset($_GET['act']) && $_GET['act']== 'timkiem')
+    {
+        $ac = 3;
+    }
+    else
+    {
+        $ac=1;
+    }
+  }
+  ?>
     </div>
     <!--trà xanh tây bắc-->
     <div class="row mt-5">

@@ -5,7 +5,7 @@
   if (isset($_SESSION['cart']) && count($_SESSION['cart']) > 0) {
 
     ?>
-    <form action="index.php?action=cart&act=update_cart" method="post">
+    <form action="/cart?action=cart&act=update_cart" method="post">
       <table class="table table-bordered">
         <thead>
           <tr>
@@ -22,10 +22,11 @@
         </thead>
         <tbody>
           <?php
-          $index = 0;
+          // $index = 0;
           foreach ($_SESSION['cart'] as $key => $item):
             ?>
             <tr>
+              <!-- <form method="put" action="/cart?action=cart&act=cart_update&id=<?php echo $key; ?>"> -->
               <td><?php echo $key + 1?></td>
               <td>
               <?php
@@ -42,6 +43,7 @@
                 <ul>
                 <?php
                 foreach ($item['toppings'] as $toppingKey => $toppingItem):
+                  // $item['dongia'] += $toppingItem['giatopping'];
                   echo '<li class="cart-topping-item">' . $toppingItem["tentopping"] . ' + ' . $toppingItem["giatopping"] . '</li>';
                 endforeach; ?>
                 </ul>
@@ -50,15 +52,23 @@
                 <?php echo $item['dongia']; ?> - Số Lượng: <input type="text" name="newqty[<?php echo $key; ?>]"
                   value="<?php echo number_format($item['soluong']); ?>" /><br />
                 <p style="float: right;"> Thành Tiền
-                  <?php echo $item['thanhtien']; ?><sup><u>đ</u></sup>
+                <?php
+                $sum=0;
+                foreach ($item['toppings'] as $toppingKey => $toppingItem):                
+                   $item['dongia'] += $toppingItem['giatopping'];
+                endforeach; 
+                $sum=$item['dongia'] + $item['size']['giasize'] ;    
+                echo number_format($item['soluong'] * $sum);echo"<sup><u>đ</u></sup>";
+                ?>
                 </p>
               </td>
               <td><a href="/cart?action=cart&act=cart_delete&id=<?php echo $key; ?>"><button type="button"
                     class="btn btn-danger">Xóa</button></a>
 
-                <button type="submit" class="btn btn-secondary">Sửa</button>
+                <button type="submit" class="btn btn-secondary" onclick="updateCart()">Sửa</button>
 
               </td>
+              </form>
             </tr>
           <?php
           endforeach;
@@ -75,11 +85,11 @@
                 ?> <sup><u>đ</u></sup>
               </b>
             </td>
-            <td><a href="">Thanh toán</a></td>
+            <td><a href="/thanhtoan?act=thanhtoan">Thanh toán</a></td>
           </tr>
         </tbody>
       </table>
-    </form>
+    <!-- </form> -->
   <?php
   } else {
     echo '<script>alert("Giỏ hàng chưa có hàng");</script>';
@@ -88,3 +98,6 @@
   ?>
 </div>
 </div>
+<!-- -->
+
+

@@ -96,6 +96,11 @@ class sanPham
         $result = $db->getInstance($select);
         return $result;
     }
-   
+    function timkiemSP($tensp){
+        $db = new connect();
+        $select = "SELECT * FROM `sanpham` WHERE `tensp` LIKE '%$tensp%'";
+        $result = $db->getList($select);
+        return $result;
+    }
 }
 ?>

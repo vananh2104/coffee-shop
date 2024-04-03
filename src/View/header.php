@@ -10,7 +10,7 @@
     if (isset($_SESSION['LastName'])) {
         echo '<div class="item user-action">
     <i style="color:orange"  class="fa fa-user-circle-o" aria-hidden="true"></i><a style="color: red;">
-        Hi,' . $_SESSION['FirstName'] . ' ' . $_SESSION['LastName'] . '</a>
+        Hi,' . $_SESSION['FirstName'] . ' ' . $_SESSION['LastName'] . ' </a>
     </div>';
         echo '<div class="item user-action">
     <i style="color:orange"  class="fa fa-sign-out" aria-hidden="true"></i><a href="/logout"> Đăng xuất</a>
@@ -23,11 +23,14 @@
     <i style="color:orange"  class="fa fa-sign-in" aria-hidden="true"><a href="/login"> </i>Đăng nhập</a>
     </div>';
     }
+
     ?>
+   
     <!--giỏ hàng-->
     <div class="item">
-        <a href="/cart"><i style="color:orange" style="font-size: 20px;" class="fa fa-cart-plus" aria-hidden="true">(0)</i>
-        </a>               
+        <a href="/cart"><i style="color:orange" style="font-size: 20px;" class="fa fa-cart-plus"
+                aria-hidden="true"></i>
+        </a>
     </div>
 
 </div>
@@ -44,13 +47,13 @@
 
         <?php
         $mn = new menu();
-        $result = $mn->getMenu(null); 
-        
+        $result = $mn->getMenu(null);
+
         while ($set = $result->fetch()):
             ?>
             <li class="menu-item">
                 <?php $mn2 = new menu();
-                $result2 = $mn2->getMenu($set['id']); 
+                $result2 = $mn2->getMenu($set['id']);
                 $itemCount = $result2->fetchColumn();
                 ?>
 
@@ -77,8 +80,8 @@
                             <ul class="menu-sub navigation-<?php echo $set2['id'] ?> level-2">
                                 <?php
                                 $mn3 = new menu();
-                                $result3 = $mn3->getMenu($set2['id']); 
-                               
+                                $result3 = $mn3->getMenu($set2['id']);
+
                                 while ($set3 = $result3->fetch()):
                                     ?>
                                     <li><a href="<?php echo $set3['path'] ?>">
@@ -89,13 +92,29 @@
                                 ?>
                             </ul>
                         </li>
+
                         <?php
                     endwhile
                     ?>
+      
                 </ul>
             </li>
             <?php
         endwhile
         ?>
     </ul>
+    <div class="item search-bar">
+        <form class="form-inline" action="/timkiem?act=timkiem" method="post">
+            <div class="input-group">
+                <input type="text" name="timkiem" class="form-control" placeholder="Tìm kiếm">
+                <div class="input-group-append">
+                    <button class="btn btn-outline-secondary" type="submit" id="btsearch">
+                        <i class="fa fa-search"></i>
+                    </button>
+                </div>
+            </div>
+        </form>
+    </div>
+  
+
 </header>

@@ -30,13 +30,25 @@ switch ($paths[1]) {
             $ctrl = $_GET['action']; //dangki
             include_once "Controller/$ctrl.php";
         } else {
-        include_once "View/login.php";
+            include_once "View/login.php";
         }
         break;
     case 'logout':
         include_once "Controller/logout.php";
-        case 'cart':
-            include_once "Controller/cart.php";
+        break; // Thêm break ở đây
+    case 'cart':
+        include_once "Controller/cart.php";
+        break; // Thêm break ở đây
+    case 'thanhtoan':
+        include_once "Controller/thanhtoan.php";
+        break; // Thêm break ở đây
+
+    case 'quanli':
+        include_once "Controller/admin.php";
+        break;
+    case 'timkiem':
+        include_once "Controller/timkiem.php";
+        break;
     default:
         include_once "View/not-found.php";
 }

@@ -30,27 +30,53 @@ class cart
             //     $this->updateHH($key, $soluong);
             // }
         }
-        if ($flag == false) {
-            //Giỏ hàng chứa 1 món hàng, món hàng là 1 object
-            $item = array(
-                'idsp' => $idsp, //thuộc tính->giá trị, trong đó thuộc tính tự đặt
-                'tensp' => $tensp, //
-                'size' => $size,
-                'toppings' => $toppings,
-                'soluong' => $soluong,
-                'dongia' => $dongia,
-                'thanhtien' => $total
-            );
-            //đem đối tượng add vào giỏ hàng a[]
-            $_SESSION['cart'][] = $item;
+
+
+        $flag = false; // Khởi tạo biến flag là false
+
+// Kiểm tra xem sản phẩm đã tồn tại trong giỏ hàng chưa
+if (isset($_SESSION["cart"])) {
+    foreach ($_SESSION["cart"] as $key => $value) {
+        if ($value['idsp'] == $idsp && $value['size'] == $size && $value['toppings'] == $toppings) {
+            // Nếu sản phẩm đã tồn tại trong giỏ hàng với cùng idsp, size và toppings, tăng số lượng lên và đặt biến flag là true
+            $_SESSION["cart"][$key]["soluong"] += 1;
+            $flag = true;
+            break;
         }
+    }
+}
+
+// Nếu sản phẩm chưa tồn tại trong giỏ hàng với cùng idsp, size và toppings, thêm mới vào giỏ hàng
+if (!$flag) {
+    $item = array(
+        'idsp' => $idsp,
+        'tensp' => $tensp,
+        'size' => $size,
+        'toppings' => $toppings,
+        'soluong' => $soluong,
+        'dongia' => $dongia,
+        'thanhtien' => $total
+    );
+    $_SESSION['cart'][] = $item;
+}
+
+        
     }
     //Phương thức tính tổng tiền trong giỏ hàng
     function subTotal()
-    {
+    {   
+        $sum=0;
         $subtotal = 0;
+        $sub=0;
         foreach ($_SESSION['cart'] as $key => $item) {
-            $subtotal += $item['thanhtien'];
+            $sum = 0;    
+            foreach ($item['toppings'] as $toppingKey => $toppingItem)
+            {
+                         
+                $sum += $toppingItem['giatopping'];
+            }
+             $sub=($item['dongia'] + $item['size']['giasize']+$sum)*$item['soluong'];
+             $subtotal +=$sub;
         }
         $subtotal = number_format($subtotal, 2);
         return $subtotal;

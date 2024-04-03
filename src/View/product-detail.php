@@ -33,7 +33,7 @@
                 <img src="/content/images/<?php echo $image['tenhinh'] ?>" width="80%" alt="" />
             </div>
             <div class="col-md-6">
-                <form action="/cart?action=cart&act=cart_action" method="post">
+                <form action="/cart?action=cart&act=cart_action" method="post" id="productForm">
                     <div>
                         <h3><b>
                                 <?php echo $productDetail['tensp'] ?>
@@ -88,6 +88,38 @@
                         <?php endwhile;
                         ?>
                         <script>
+                           // JavaScript (jQuery)
+                                $(document).ready(function() {
+                                    $('#addToCartBtn').click(function(e) {
+                                        // Ngăn chặn mặc định hành vi gửi submit của form
+                                        e.preventDefault();
+
+                                        var selectedSize = $('#size').val();
+                                        var  selectedtopping = $('#toppings').val();
+
+                                        // Kiểm tra xem đã chọn size hay chưa
+                                        if (selectedSize === '') {
+                                            // Hiển thị thông báo nếu không chọn size
+                                            alert("Bạn chưa chọn size sản phẩm.");
+                                            return; // Dừng xử lý tiếp theo
+                                        } 
+                                        else if(selectedtopping=='') 
+                                        {
+                                            alert("Bạn chưa chọn toppings.");
+                                            return; // Dừng xử lý tiếp theo
+
+                                        }
+                                        else
+                                        {
+                                                 
+                                        // Nếu đã chọn size, tiếp tục gửi form
+                                        $('#productForm').submit();
+                                        }
+
+
+                                    });
+                                });
+
                             function SelectedTopping(element) {
                                 
                                 var selected = element.getAttribute("data-selected");
@@ -117,7 +149,7 @@
                         <input type="number" id="soluong" name="soluong" min="1" max="100" value="1" size="15" />
                     </div>
                     <div>
-                        <button type="submit" class="fa fa-motorcycle" aria-hidden="true"> Đặt giao tận nơi</button>
+                        <button id="addToCartBtn" type="submit" class="fa fa-motorcycle" aria-hidden="true" > Đặt giao tận nơi</button>
                     </div>
                 </form>
             </div>
